@@ -1,10 +1,12 @@
 - Table of Contents
-    + [Overview](#overview)
-    + [Installation](#installation)
-    + [Configuration](#configuration)
-    + [Save to Database](#save-to-database)
-    + [Customization](#customization)
-    + [Credits](#credits)
+    - [Installation](installation.md)
+    - [Usage](installation.md#usage)
+    - [Options & Callbacks JS](optionsjs.md)
+    - [Options & Callbacks PHP](optionsphp.md)
+    - [Security](security.md)
+    - [Debugging](debugging.md)
+    - [How it Works](how.md)
+    - [Credits](credits.md)
 
 - 
 
