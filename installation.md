@@ -1,5 +1,6 @@
-# Avatar Upload & Webcam with Crop
+# ImgSelect 
 
+_Upload/Webcam Snapshot & Crop_
 
 ## Overview
 
@@ -13,26 +14,48 @@ To install this script upload it on your webhosting, or copy to your localhost s
 
 ## Configuration 
 
-The configuration is located in the script root folder in `config.php`. The default configuration should be ok for you but If you want to edit something here's what you can edit:
+The configuration options can be found in `inc/imgSelect.php` and `assets/imgSelect.js`.
 
-- `UPLOAD_PATH` - The path where you want to upload images.
-- `ALLOWED_EXTENSIONS` - The allowed file extensions that users can upload to your server.
-- `IMAGE_MAX_WIDTH` - When someone uploads a image this image will be resized so you won't store too large images on your server.
-- `IMAGE_MAX_HEIGHT` - Same as above, only here is the image maximum height.
-- `IMAGE_CROP_SIZE` - When someone crop their uploaded image this will be the size that the image will be resized.
-- `FILE_SIZE_LIMIT` - The maximum file size accepted for upload (in Megabytes)
+__inc/imgSelect.php__:
+
+- `IMG_MAX_WIDTH` - Image max width (in pixels)
+- `IMG_MAX_HEIGHT` - Image max height (in pixels)
+- `IMG_MIN_WIDTH` - Image min width (in pixels)
+- `IMG_MIN_HEIGHT` - Image min height (in pixels)
+- `IMG_CROP_WIDTH` - Image crop width (in pixels)
+- `ALLOWED_IMAGES` - The allowed image extensions that can be uploaded
+- `UPLOAD_PATH` - The path where you want to upload images
+
+__assets/imgSelect.js__:
+
+- `php` - Ajax url
+- `alert` - Selector for the alert message
+- `setImg` - After the image is saved this selector will be used to update the image from the page (optional)
+- `crop` - Settings for crop
+    - `width` - Default selection width (in pixels)
+    - `height` - Default selection height (in pixels)
+    - `aspectRatio` - A string of the form "width:height" which represents the aspect ratio to maintain ([see](http://andrew.hedges.name/experiments/aspect_ratio/))
+    - `maxHeight` - Maximum selection height (in pixels) (optional)
+    - `maxWidth` - Maximum selection width (in pixels) (optional)
+    - `minHeight` - Minimum selection height (in pixels) (optional)
+    - `minWidth` - Minimum selection width (in pixels) (optional)
+
+## Save to Database
+
+If you want to save the images to a database open `inc/imgSelect.php` and look for function `save_image_cb($image) {...}`. 
+
+Use `$image` variable to get the image then save it to your database. 
+
+Also if you want a custom name for the image edit `$filename` variable. You may set it to a user id from a session.
 
 ## Customization
 
 The script has just few files that you might want to edit. The code has comments so you'll know what it does.
 
-- `index.php` - Here you can edit the html structure.
-- `assets/css/slyle.css` - Here are you can add more css.
-- `assets/js/script.js` - All javascripts for uploading image, webcam and cropping option.
-- `includes/ajax.php` - The Ajax requests from script.js will be sent here, and the image will be uploaded or cropped.
-- `includes/functions.php` - The functions for the script.
-
-The rest of the files contains PHP image classes and other functions as well as javascript libraries and [Bootstrap](http://getbootstrap.com/2.3.2) assets. 
+- `index.php` - HTML structure.
+- `assets/imgSelect.css` - Few lines (but very important) of css.
+- `assets/imgSelect.js` - All javascripts for uploading image, webcam and cropping option.
+- `inc/imgSelect.php` - Here are processed all AJAX requests.
 
 ## Credits 
 

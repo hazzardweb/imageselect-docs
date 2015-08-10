@@ -2,6 +2,7 @@
     + [Overview](#overview)
     + [Installation](#installation)
     + [Configuration](#configuration)
+    + [Save to Database](#save-to-database)
     + [Customization](#customization)
     + [Credits](#credits)
 
