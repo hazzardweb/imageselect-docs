@@ -52,10 +52,13 @@ data: function () {
 On the server side, inside the [callbacks](optionsphp.md#callbacks), the data can be retrieved  using ` $_POST['data']`.
 
 ```php
-before_before => function ($crop) {
-    $id = $_POST['data']['id'];
-    $val = $_POST['data']['val'];
-}
+new ImgSelect(array(
+    // ...
+    'before_before' => function ($crop) {
+        $id = $_POST['data']['id'];
+        $val = $_POST['data']['val'];
+    },
+));
 ```
 
 ### messages
