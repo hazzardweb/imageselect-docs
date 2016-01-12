@@ -27,17 +27,36 @@ Object of options for the [Jcrop](http://deepliquid.com/content/Jcrop_Manual.htm
 - `maxSize` - Maximum width/height (e.g. _[500, 500]_). Default: `null`
 - `setSelect` - Set an initial selection area (_[ x1, y1, x2, y2 ]_). Default: `null`
 
-### flash 
-
-Object of options for the flash webcam.
-
-- `swf`- URL to _webcam.swf_. Default: `assets/webcam.swf`
-- `width` - The width for embeding _webcam.swf_. Default: `400`
-- `height` - The height for embeding _webcam.swf_ Default: `400`
-
 ### ​data
 
-Object of custom data to be sent to the server. (e.g. `data: { my_var: "hello" }` ).Can be retrieved on the server side using ` $_POST['data']`.
+Object or Function of custom data to be sent to the server.
+
+__Example:__
+
+```javascript
+// Object
+data: {
+    id: 12,
+    val: 'hello',
+},
+
+// Or function
+data: function () {
+    return {
+        id: 12,
+        val: $('#my-input').val(),
+    };
+},
+```
+
+On the server side, inside the [callbacks](optionsphp.md#callbacks), the data can be retrieved  using ` $_POST['data']`.
+
+```php
+before_before => function ($crop) {
+    $id = $_POST['data']['id'];
+    $val = $_POST['data']['val'];
+}
+```
 
 ### messages
 
