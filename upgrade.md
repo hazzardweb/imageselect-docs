@@ -1,9 +1,9 @@
 # Upgrade Guide
 
-- [Upgrading To 1.5.0 From 1.4.0](#upgrading-to-150-from-140)
+- [Upgrading To 1.4.2 From 1.4](#upgrading-to-142-from-14)
 
 
-## Upgrading To 1.5.0 From 1.4.0
+## Upgrading To 1.4.2 From 1.4
 
 - Replace `assets/js/imgSelect.js`.
 - Replace `server/ImgPicker.php`.
