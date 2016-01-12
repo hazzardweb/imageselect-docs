@@ -1,11 +1,11 @@
 - Table of Contents
     - [Installation](installation.md)
+    - [Upgrade Guide](upgrade.md)
     - [Usage](installation.md#usage)
     - [Options & Callbacks JS](optionsjs.md)
     - [Options & Callbacks PHP](optionsphp.md)
     - [Security](security.md)
     - [Debugging](debugging.md)
-    - [How it Works](how.md)
     - [Credits](credits.md)
 
 - 
