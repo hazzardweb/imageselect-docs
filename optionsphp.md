@@ -103,7 +103,7 @@ The crop maximum height.
 
 ### before_upload
 
-`before_upload($image, $instance)` - Called before uploading the file to the server.
+`before_upload($image)` - Called before uploading the file to the server.
 
 The `$image` object has the following properties:
 
@@ -115,14 +115,12 @@ The `$image` object has the following properties:
 - `width` - Image width.
 - `height` - image height.
 
-The `$instance` object is the current `ImgSelect` instance.
-
 In this callback you can rename the uploaded file:
 
 ```php
 new ImgSelect(array(
     // options...
-    `before_upload` => function ($image, $instance) {
+    `before_upload` => function ($image) {
         $image->name = 'custom_name.'.$image->type;
     },
 ));
@@ -130,13 +128,13 @@ new ImgSelect(array(
 
 ### upload_complete
 
-`upload_complete($image, $instance)` - Called when the upload is completed.
+`upload_complete ($image)` - Called when the upload is completed.
 
 The `$image` object has the same properties as [above](#before_upload).
 
 ### before_crop
 
-`before_crop($crop, $instance)` - Called before cropping the image.
+`before_crop ($crop)` - Called before cropping the image.
 
 The `$crop` object has the following properties:
 
@@ -157,7 +155,7 @@ new ImgSelect(array(
 
 ### crop_complete
 
-`crop_complete($image, $instance)` -  Called when the crop is completed.
+`crop_complete ($image)` -  Called when the crop is completed.
 
 The `$image` object has the same properties as [above](#before_upload).
 
